@@ -24,6 +24,10 @@ xmin [xmin < avg_min]
 xmax [xmax > avg_max]
 
 #f)
+
+## NOTE: not DRY (don't repeat yourself). Assign the dates to a vector and
+## then use that vector to assign names to the elements of xmin and xmax
+
 names(xmin) <- c('MON', 'TUE', 'WEN','THU', 'FRI', 'SAT','SUN')
 names (xmax) <- c('MON', 'TUE', 'WEN','THU', 'FRI', 'SAT','SUN')
 
@@ -52,6 +56,8 @@ temperaturesF
 
 #j)
 #i)
+## No need to call the constructor data.frame
+## The subsetting already returns a data fame
 tempMon_Fri<- data.frame(
   temperaturesF[c(1:5), ]
 )
